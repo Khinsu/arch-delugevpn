@@ -30,8 +30,11 @@ fi
 # call pacman db and package updater script
 source upd.sh
 
+pacman -U https://archive.archlinux.org/packages/l/libtorrent-rasterbar/libtorrent-rasterbar-1%3A1.2.14-4-x86_64.pkg.tar.zst --noconfirm
+
+
 # define pacman packages
-pacman_packages="libtorrent-rasterbar openssl python-chardet python-dbus python-distro python-geoip python-idna python-mako python-pillow python-pyopenssl python-rencode python-service-identity python-setproctitle python-six python-future python-requests python-twisted python-xdg python-zope-interface xdg-utils libappindicator-gtk3 deluge"
+pacman_packages="openssl python-chardet python-dbus python-distro python-geoip python-idna python-mako python-pillow python-pyopenssl python-rencode python-service-identity python-setproctitle python-six python-future python-requests python-twisted python-xdg python-zope-interface xdg-utils libappindicator-gtk3 deluge"
 
 # install compiled packages using pacman
 if [[ ! -z "${pacman_packages}" ]]; then
@@ -57,7 +60,7 @@ mkdir -p /home/nobody/.cache/Python-Eggs
 chmod -R 700 /home/nobody/.cache/Python-Eggs
 
 # change peerid to appear to be 2.0.3 stable - note this does not work for all/any private trackers at present
-sed -i -e "s~peer_id = substitute_chr(peer_id, 6, release_chr)~peer_id = \'-DE205s-\'\n        release_chr = \'s\'~g" /usr/lib/python3*/site-packages/deluge/core/core.py
+# sed -i -e "s~peer_id = substitute_chr(peer_id, 6, release_chr)~peer_id = \'-DE205s-\'\n        release_chr = \'s\'~g" /usr/lib/python3*/site-packages/deluge/core/core.py
 
 # container perms
 ####
