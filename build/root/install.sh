@@ -30,7 +30,7 @@ fi
 # call pacman db and package updater script
 source upd.sh
 
-pacman -U https://archive.archlinux.org/packages/l/libtorrent-rasterbar/libtorrent-rasterbar-1%3A1.2.14-4-x86_64.pkg.tar.zst --noconfirm
+pacman -U https://archive.archlinux.org/packages/l/libtorrent-rasterbar/libtorrent-rasterbar-1%3A1.1.13-0-x86_64.pkg.tar.zst --noconfirm
 
 
 # define pacman packages
